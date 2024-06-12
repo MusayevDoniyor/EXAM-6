@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EXAM-6 || Admin</title>
+    <!-- * Favicon -->
+    <link
+      rel="shortcut icon"
+      href="./Images/favicon/admin.ico"
+      type="image/x-icon"
+    />
+
+    <!-- * CSS -->
+    <link rel="stylesheet" href="./Styles/main.css" />
+
+    <!-- * Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- * Scripts -->
+    <script defer src="./Scripts/index.js"></script>
+
+    <!-- * Sweetalert2 -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="/index.html">Admin</a></li>
+          <li><a href="/login.html">Login</a></li>
+        </ul>
+      </nav>
+
+      <button class="logoutBtn" id="logoutBtn" type="submit">Logout</button>
+    </header>
+
+    <main>
+      <section class="newProduct">
+        <fieldset>
+          <legend>New Product</legend>
+
+          <form>
+            <div class="form-field-admin">
+              <input type="text" placeholder="Title" id="title" required />
+            </div>
+
+            <div class="form-field-admin">
+              <input type="text" placeholder="Image" id="image" required />
+            </div>
+
+            <div class="form-field-admin">
+              <input type="number" placeholder="Price" id="price" required />
+            </div>
+
+            <div class="form-field-admin">
+              <textarea
+                rows="3"
+                cols="100"
+                placeholder="Description"
+                id="description"
+                required
+              ></textarea>
+            </div>
+
+            <div class="form-field-admin">
+              <button class="btn" type="submit">New Product</button>
+            </div>
+          </form>
+        </fieldset>
+      </section>
+
+      <section class="productsMainContainer" id="productsMainContainer">
+        <h2 id="productsLength"></h2>
+        <div id="productsContainer"></div>
+
+        <div id="productModal" class="modal">
+          <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <div id="modalContent"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

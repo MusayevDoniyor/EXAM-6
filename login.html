@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EXAM-6 || Login</title>
+    <!-- * Favicon -->
+    <link
+      rel="shortcut icon"
+      href="./Images/favicon/login.ico"
+      type="image/x-icon"
+    />
+
+    <!-- * CSS -->
+    <link rel="stylesheet" href="./Styles/main.css" />
+
+    <!-- * Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- * Scripts -->
+    <script defer src="./Scripts/login.js"></script>
+
+    <!-- * Sweetalert2 -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="/login.html">Login</a></li>
+          <li><a href="/index.html">Admin</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="Login">
+        <fieldset>
+          <legend>Login</legend>
+
+          <form>
+            <div class="form-field-login">
+              <input
+                type="email"
+                placeholder="Email"
+                id="emailInput"
+                autocomplete="username"
+                required
+              />
+            </div>
+
+            <div class="form-field-login">
+              <input
+                type="password"
+                placeholder="Password"
+                id="passwordInput"
+                autocomplete="current-password"
+                required
+              />
+            </div>
+
+            <div class="form-field-login">
+              <button class="btn" id="loginButton" type="submit">Log in</button>
+            </div>
+          </form>
+        </fieldset>
+      </section>
+    </main>
+  </body>
+</html>
