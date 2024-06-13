@@ -14,7 +14,7 @@
     <!-- * CSS -->
     <link rel="stylesheet" href="./Styles/main.css" />
 
-    <!-- * Font -->
+    <!-- * Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -22,7 +22,7 @@
       rel="stylesheet"
     />
 
-    <!-- * Scripts -->
+    <!-- * Script -->
     <script defer src="./Scripts/index.js"></script>
 
     <!-- * Sweetalert2 -->
@@ -34,44 +34,32 @@
   </head>
   <body>
     <header>
-      <nav>
-        <ul>
-          <li><a href="/index.html">Admin</a></li>
-          <li><a href="/login.html">Login</a></li>
-        </ul>
-      </nav>
-
       <button class="logoutBtn" id="logoutBtn" type="submit">Logout</button>
     </header>
-
     <main>
       <section class="newProduct">
         <fieldset>
           <legend>New Product</legend>
-
           <form>
             <div class="form-field-admin">
               <input type="text" placeholder="Title" id="title" required />
             </div>
-
-            <div class="form-field-admin">
-              <input type="text" placeholder="Image" id="image" required />
+            <div class="form-field-admin form-field-admin-file">
+              <label for="image">Image File</label>
+              <input type="file" placeholder="Image" id="image" required />
             </div>
-
             <div class="form-field-admin">
               <input type="number" placeholder="Price" id="price" required />
             </div>
-
             <div class="form-field-admin">
               <textarea
                 rows="3"
-                cols="100"
+                cols="50"
                 placeholder="Description"
                 id="description"
                 required
               ></textarea>
             </div>
-
             <div class="form-field-admin">
               <button class="btn" type="submit">New Product</button>
             </div>
@@ -87,6 +75,36 @@
           <div class="modal-content">
             <span class="close-button">&times;</span>
             <div id="modalContent"></div>
+          </div>
+        </div>
+
+        <div id="editModal" class="modal">
+          <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <fieldset>
+              <legend>Edit Product</legend>
+              <div class="form-field-admin">
+                <input type="text" placeholder="Title" id="editTitle" />
+              </div>
+              <div class="form-field-admin form-field-admin-file">
+                <label for="editImage">Image File</label>
+                <input type="file" placeholder="Image" id="editImage" />
+              </div>
+              <div class="form-field-admin">
+                <input type="number" placeholder="Price" id="editPrice" />
+              </div>
+              <div class="form-field-admin">
+                <textarea
+                  rows="2"
+                  maxlength="50"
+                  placeholder="Description"
+                  id="editDescription"
+                ></textarea>
+              </div>
+              <div class="form-field-admin">
+                <button class="btn" id="saveEditBtn">Save Changes</button>
+              </div>
+            </fieldset>
           </div>
         </div>
       </section>

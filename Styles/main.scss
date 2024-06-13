@@ -38,67 +38,37 @@ input {
 }
 
 textarea {
+    width: 100%;
+    max-width: 600px;
+    padding: 0.9rem 0.7rem;
+    box-sizing: border-box;
+    font-size: 17px;
+    color: #4A4A4A;
+    border: none;
+    outline: none;
     resize: vertical;
+}
+
+@media (max-width: 767px) {
+    textarea {
+        max-width: 100%;
+    }
+}
+
+body {
+    background: linear-gradient(to right, #C6EA8D, #00CDAC);
 }
 
 header {
     max-width: 1400px;
     width: 97%;
     margin: 0 auto;
-    display: flex;
     align-items: center;
-    justify-content: space-between;
     padding: 15px 10px;
-    border-bottom: 1px solid lightgray;
+    border-bottom: 2px solid #47AB11;
     margin-bottom: 50px;
-}
-
-nav ul {
     display: flex;
-    gap: 35px;
-
-    li a {
-        font-weight: 600;
-        font-size: 18px;
-        line-height: 20px;
-        color: #18272f;
-        position: relative;
-    }
-
-    li a::before {
-        content: "";
-        position: absolute;
-        width: 100%;
-        height: 2px;
-        border-radius: 4px;
-        background-color: #18272f;
-        bottom: 0;
-        left: 0;
-        transform-origin: right;
-        transform: scaleX(0);
-        transition: transform .3s ease-in-out;
-        -webkit-border-radius: 4px;
-        -moz-border-radius: 4px;
-        -ms-border-radius: 4px;
-        -o-border-radius: 4px;
-        -webkit-transform: scaleX(0);
-        -moz-transform: scaleX(0);
-        -ms-transform: scaleX(0);
-        -o-transform: scaleX(0);
-        -webkit-transition: transform .3s ease-in-out;
-        -moz-transition: transform .3s ease-in-out;
-        -ms-transition: transform .3s ease-in-out;
-        -o-transition: transform .3s ease-in-out;
-    }
-
-    li a:hover::before {
-        transform-origin: left;
-        transform: scaleX(1);
-        -webkit-transform: scaleX(1);
-        -moz-transform: scaleX(1);
-        -ms-transform: scaleX(1);
-        -o-transform: scaleX(1);
-    }
+    justify-content: flex-end;
 }
 
 .logoutBtn {
@@ -135,14 +105,49 @@ fieldset {
     border-radius: 10px;
     font-weight: 700;
     margin: 0 auto;
+    overflow: hidden;
     font-size: 20px;
     line-height: 30px;
+    border-color: #47AB11;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
+}
 
-    legend {
-        color: #4A4A4A;
+legend {
+    color: #4A4A4A;
+}
+
+
+.form-field-admin-file {
+    background-color: white;
+    padding: 7px;
+    text-indent: 20px;
+    font-weight: normal;
+}
+
+input[type="file"] {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+    background-color: white;
+
+    &+label {
+        background-color: #fff;
+        font-size: 1.25em;
+        font-weight: 700;
+        color: white;
+        background-color: black;
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    &:focus+label,
+    &+label:hover {
+        background-color: red;
     }
 }
