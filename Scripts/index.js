@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     products.push(newProduct);
     localStorage.setItem("products", JSON.stringify(products));
-    displayProduct(newProduct);
+    displayProducts();
 
     Swal.fire({
       title: "Product Added!",
@@ -107,29 +107,30 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function displayProducts() {
     container.innerHTML = "";
-    products.forEach((product) => {
-      displayProduct(product);
-    });
+    products
+      .map((product) => {
+        const productElement = document.createElement("div");
+        productElement.classList.add("product");
+        productElement.setAttribute("data-id", product.id);
+
+        productElement.innerHTML = `
+          <img class='image' src="${product.image}" alt="${product.title}">
+          <h3 class='title'>${product.title}</h3>
+          <p class='price'>Price: $${product.price}</p>
+          <p class='description'>${product.description}</p>
+          <div id='productButtons'>
+            <button class="deleteButton" type='button'>Delete Product - ${product.id}</button>
+            <button class="editButton" type='button'>Edit Product - ${product.id}</button>
+          </div>
+        `;
+
+        return productElement;
+      })
+      .forEach((productElement) => {
+        container.appendChild(productElement);
+      });
+
     updateProductsLength();
-  }
-
-  function displayProduct(product) {
-    const productElement = document.createElement("div");
-    productElement.classList.add("product");
-    productElement.setAttribute("data-id", product.id);
-
-    productElement.innerHTML = `
-      <img class='image' src="${product.image}" alt="${product.title}">
-      <h3 class='title'>${product.title}</h3>
-      <p class='price'>Price: $${product.price}</p>
-      <p class='description'>${product.description}</p>
-      <div id='productButtons'>
-        <button class="deleteButton" type='button'>Delete Product - ${product.id}</button>
-        <button class="editButton" type='button'>Edit Product - ${product.id}</button>
-      </div>
-    `;
-
-    container.appendChild(productElement);
   }
 
   function clearInputs() {
@@ -300,8 +301,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const product = products.find((p) => p.id === productId);
       openEditModal(product);
     } else if (event.target.classList.contains("image")) {
-      const productId = parseInt(productElement.getAttribute("data-id"), 10);
-      openProductModal(productId);
+      openProductModal(productElement);
     }
   });
 

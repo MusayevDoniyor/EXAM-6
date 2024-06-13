@@ -2,6 +2,7 @@ const emailInput = document.getElementById("emailInput");
 const passwordInput = document.getElementById("passwordInput");
 const form = document.getElementsByTagName("form")[0];
 const loginButton = document.getElementById("loginButton");
+const togglePassword = document.getElementById("togglePassword");
 
 let email, password;
 
@@ -17,6 +18,14 @@ function init() {
   passwordInput.oninput = function (event) {
     password = event.target.value.trim();
     checkInputs();
+  };
+
+  togglePassword.onclick = function () {
+    const type =
+      passwordInput.getAttribute("type") === "password" ? "text" : "password";
+    passwordInput.setAttribute("type", type);
+    togglePassword.src =
+      type === "password" ? "./Images/show-password.png" : "./Images/hide.png";
   };
 
   form.onsubmit = async function (event) {

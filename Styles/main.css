@@ -179,6 +179,10 @@ form .btn {
   text-indent: 20px;
 }
 
+.modal .form-field-admin-saveChanges {
+  border-bottom: none;
+}
+
 .modal-content {
   background-color: #fefefe;
   margin: 15% auto;
@@ -258,6 +262,17 @@ form .form-field-login {
   align-items: center;
   margin-bottom: 1rem;
   position: relative;
+}
+
+.form-field-login-password .icon {
+  position: relative;
+  right: 25px;
+}
+
+.icon {
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
 }
 
 form input,
@@ -357,10 +372,15 @@ header {
   margin: 0 auto;
   align-items: center;
   padding: 15px 10px;
-  border-bottom: 2px solid #47AB11;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 0 0 10px 10px;
   margin-bottom: 50px;
   display: flex;
   justify-content: flex-end;
+  -webkit-border-radius: 0 0 10px 10px;
+  -moz-border-radius: 0 0 10px 10px;
+  -ms-border-radius: 0 0 10px 10px;
+  -o-border-radius: 0 0 10px 10px;
 }
 
 .logoutBtn {
@@ -400,7 +420,8 @@ fieldset {
   overflow: hidden;
   font-size: 20px;
   line-height: 30px;
-  border-color: #47AB11;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.6);
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   -ms-border-radius: 10px;
@@ -409,13 +430,27 @@ fieldset {
 
 legend {
   color: #4A4A4A;
+  padding: 20px;
 }
 
 .form-field-admin-file {
   background-color: white;
   padding: 7px;
-  text-indent: 20px;
+  text-indent: 40px;
   font-weight: normal;
+  cursor: pointer;
+}
+.form-field-admin-file label {
+  width: 100%;
+  color: #333;
+  font-weight: normal;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+.form-field-admin-file .imageIcon img {
+  width: 25px;
+  height: 25px;
 }
 
 input[type=file] {
@@ -423,6 +458,7 @@ input[type=file] {
   height: 0.1px;
   opacity: 0;
   overflow: hidden;
+  font-weight: normal;
   position: absolute;
   z-index: -1;
   background-color: white;
@@ -438,4 +474,25 @@ input[type=file] + label {
 }
 input[type=file]:focus + label, input[type=file] + label:hover {
   background-color: red;
+}
+
+footer {
+  max-width: 1440px;
+  width: 97%;
+  margin: 20px auto 0;
+  border-radius: 10px 10px 0 0;
+  -webkit-border-radius: 10px 10px 0 0;
+  -moz-border-radius: 10px 10px 0 0;
+  -ms-border-radius: 10px 10px 0 0;
+  -o-border-radius: 10px 10px 0 0;
+}
+footer p {
+  border-radius: 10px 10px 0 0;
+  width: 100%;
+  padding: 0.9rem 2.5rem;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.6);
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 30px;
 }/*# sourceMappingURL=main.css.map */

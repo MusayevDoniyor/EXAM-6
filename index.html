@@ -4,17 +4,45 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>EXAM-6 || Admin</title>
-    <!-- * Favicon -->
+    <meta
+      name="description"
+      content="Admin panel for managing products in EXAM-6, including adding, editing, and viewing product details."
+    />
+    <meta
+      name="keywords"
+      content="EXAM-6, Admin, Product Management, E-commerce"
+    />
+    <meta name="author" content="Your Name" />
+    <meta name="robots" content="index, follow" />
     <link
       rel="shortcut icon"
       href="./Images/favicon/admin.ico"
       type="image/x-icon"
     />
 
-    <!-- * CSS -->
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="EXAM-6 Admin Panel" />
+    <meta
+      property="og:description"
+      content="Admin panel for managing products in EXAM-6."
+    />
+    <meta property="og:image" content="URL_to_image" />
+    <meta property="og:url" content="URL_of_your_page" />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="EXAM-6 Admin Panel" />
+    <meta
+      name="twitter:description"
+      content="Admin panel for managing products in EXAM-6."
+    />
+    <meta name="twitter:image" content="URL_to_image" />
+
+    <!-- CSS -->
     <link rel="stylesheet" href="./Styles/main.css" />
 
-    <!-- * Fonts -->
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -22,10 +50,10 @@
       rel="stylesheet"
     />
 
-    <!-- * Script -->
+    <!-- Scripts -->
     <script defer src="./Scripts/index.js"></script>
 
-    <!-- * Sweetalert2 -->
+    <!-- Sweetalert2 -->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css"
@@ -45,7 +73,15 @@
               <input type="text" placeholder="Title" id="title" required />
             </div>
             <div class="form-field-admin form-field-admin-file">
-              <label for="image">Image File</label>
+              <label for="image"
+                >Image File
+                <span class="imageIcon">
+                  <img
+                    src="./Images/add_photo_alternate_outlined.svg"
+                    alt="Add image icon"
+                  />
+                </span>
+              </label>
               <input type="file" placeholder="Image" id="image" required />
             </div>
             <div class="form-field-admin">
@@ -68,7 +104,7 @@
       </section>
 
       <section class="productsMainContainer" id="productsMainContainer">
-        <h2 id="productsLength"></h2>
+        <h2 id="productsLength">Product List</h2>
         <div id="productsContainer"></div>
 
         <div id="productModal" class="modal">
@@ -87,7 +123,15 @@
                 <input type="text" placeholder="Title" id="editTitle" />
               </div>
               <div class="form-field-admin form-field-admin-file">
-                <label for="editImage">Image File</label>
+                <label for="editImage"
+                  >Image File
+                  <span>
+                    <img
+                      src="./Images/add_photo_alternate_outlined.svg"
+                      alt="Add image icon"
+                    />
+                  </span>
+                </label>
                 <input type="file" placeholder="Image" id="editImage" />
               </div>
               <div class="form-field-admin">
@@ -96,12 +140,11 @@
               <div class="form-field-admin">
                 <textarea
                   rows="2"
-                  maxlength="50"
                   placeholder="Description"
                   id="editDescription"
                 ></textarea>
               </div>
-              <div class="form-field-admin">
+              <div class="form-field-admin form-field-admin-saveChanges">
                 <button class="btn" id="saveEditBtn">Save Changes</button>
               </div>
             </fieldset>
@@ -109,5 +152,12 @@
         </div>
       </section>
     </main>
+
+    <footer>
+      <p id="copyright">
+        &copy; 2024 Product Tracker. All Rights Reserved. Crafted with passion
+        by Doniyor Musayev.
+      </p>
+    </footer>
   </body>
 </html>
